@@ -1,0 +1,27 @@
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff;
+        }
+        .container {
+            text-align: center;
+        }
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        .video-container {
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+        }
