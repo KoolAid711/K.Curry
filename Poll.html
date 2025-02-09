@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polls</title>
+    <title>Real Gamers Speak - Podcast and Blog</title>
+    <link rel="stylesheet" href="D:\School 2025\Code\poll.css">
 </head>
 <body>
-    <div class="header">Real Gamers Speak Podcast and Blog</div>
+    <div class="header">Real Gamers Speak<br>Podcast and Blog</div>
     <div class="nav">
-        <a href="Post_Page_Curry.html">Episodes</a>
-        <a href="Pictures_Curry.html">Pictures</a>
-        <a href="Post_Page_Curry.html">Clips</a>
-        <a href="Host_Page_Curry.html">About the Host</a>
-        <a href="Poll.html">Poll</a>
+        <a href="D:\School 2025\Code\Post_Page_Curry.html">Episodes</a>
+        <a href="D:\School 2025\Code\Pictures_Curry.html">Pictures</a>
+        <a href="D:\School 2025\Code\Post_Page_Curry.html">Clips</a>
+        <a href="D:\School 2025\Code\Host_Page_Curry.html">About the Host</a>
+        <a href="D:\School 2025\Code\Poll.html">Poll</a>
     </div>
     <div class="container">
         <div class="box">
             <h3>Poll for Previous Episode</h3>
             <p>Video Game Award Nominees Suck This Year<br>Would you agree that the nominees for the GOTY gaming awards are lackluster?</p>
             <form>
-                <input type="radio" name="goty" value="Yes"> Yes<br>
-                <input type="radio" name="goty" value="No"> No<br>
-                <input type="radio" name="goty" value="Indifferent"> Indifferent<br>
+                <label><input type="radio" name="goty" value="Yes" onclick="vote(this)"> Yes <span class="vote-count" id="Yes-count">0</span></label><br>
+                <label><input type="radio" name="goty" value="No" onclick="vote(this)"> No <span class="vote-count" id="No-count">0</span></label><br>
+                <label><input type="radio" name="goty" value="Indifferent" onclick="vote(this)"> Indifferent <span class="vote-count" id="Indifferent-count">0</span></label><br>
             </form>
             <h4>Leave Comment</h4>
             <textarea class="comment-box"></textarea>
+            <button class="submit-button">Submit</button>
         </div>
         <div class="box">
             <h3>Poll for Next Episode</h3>
-            <p>Return of Real Gamers Speak<br>What Games are you looking forward for this year?</p>
+            <p>Return of Real Gamers Speak<br>What Games are you looking forward to this year?</p>
             <form>
-                <input type="checkbox" name="games" value="Metal Gear Solid Delta"> Metal Gear Solid Delta<br>
-                <input type="checkbox" name="games" value="Phantom Blade Zero"> Phantom Blade Zero<br>
-                <input type="checkbox" name="games" value="Monster Hunter Wilds"> Monster Hunter Wilds<br>
-                <input type="checkbox" name="games" value="Assassin's Creed Shadows"> Assassin's Creed Shadows<br>
-                <input type="checkbox" name="games" value="Metroid Prime 4"> Metroid Prime 4<br>
-                <input type="text" name="custom_game" placeholder="Type to Input Own Answer"><br>
+                <label><input type="checkbox" name="games" value="Metal Gear Solid Delta" onclick="vote(this)"> Metal Gear Solid Delta <span class="vote-count" id="Metal Gear Solid Delta-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Phantom Blade Zero" onclick="vote(this)"> Phantom Blade Zero <span class="vote-count" id="Phantom Blade Zero-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Monster Hunter Wilds" onclick="vote(this)"> Monster Hunter Wilds <span class="vote-count" id="Monster Hunter Wilds-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Assassin's Creed Shadows" onclick="vote(this)"> Assassin's Creed Shadows <span class="vote-count" id="Assassin's Creed Shadows-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Metroid Prime 4" onclick="vote(this)"> Metroid Prime 4 <span class="vote-count" id="Metroid Prime 4-count">0</span></label><br>
             </form>
             <h4>Leave Comment</h4>
             <textarea class="comment-box"></textarea>
+            <button class="submit-button">Submit</button>
         </div>
         <div class="box">
             <h3>Suggestions for Future Episodes</h3>
@@ -60,8 +62,25 @@
             </form>
             <h4>Leave Comment</h4>
             <textarea class="comment-box"></textarea>
+            <button class="submit-button">Submit</button>
         </div>
     </div>
-    <div class="footer">Social Media Links</div>
+    <div class="social-media">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+    </div>
+    
+    <script>
+        let voteCounts = {};
+        function vote(element) {
+            let value = element.value;
+            if (!voteCounts[value]) {
+                voteCounts[value] = 0;
+            }
+            voteCounts[value]++;
+            document.getElementById(value + "-count").innerText = voteCounts[value];
+        }
+    </script>
 </body>
 </html>

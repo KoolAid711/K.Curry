@@ -4,36 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pictures</title>
+    <link rel="stylesheet" href="D:\School 2025\Code\pictures.css">
 </head>
 <body>
 
 <header>
-    Real Gamers Speak - Podcast and Blog
+   Real Gamers Speak<br>Podcast and Blog
 </header>
 
 <div class="nav">
-        <a href="Post_Page_Curry.html">Episodes</a>
-        <a href="Pictures_Curry.html">Pictures</a>
-        <a href="Post_Page_Curry.html">Clips</a>
-        <a href="Host_Page_Curry.html">About the Host</a>
-        <a href="Poll.html">Poll</a>
+    <a href="D:\School 2025\Code\Post_Page_Curry.html">Episodes</a>
+    <a href="D:\School 2025\Code\Pictures_Curry.html">Pictures</a>
+    <a href="D:\School 2025\Code\Post_Page_Curry.html">Clips</a>
+    <a href="D:\School 2025\Code\Host_Page_Curry.html">About the Host</a>
+    <a href="D:\School 2025\Code\Poll.html">Poll</a>
 </div>
 
 <div class="carousel">
     <button onclick="prevImage()">◄</button>
-    <p>Controls For Roulette</p>
+    <h2>Controls For Roulette</h2>
     <button onclick="nextImage()">►</button>
 </div>
 
 <div class="image-section">
-    <img id="mainImage" src="Images/we.jpg" alt="Gaming Night">
-    <h2>Nacho and Gaming in the Man Cave</h2>
+    <img id="mainImage" src="D:\School 2025\Code\Images\we.jpg" alt="Gaming Night">
+    <h1>Nacho and Gaming in the Man Cave</h1>
 </div>
 
 <div class="comment-section">
     <div class="comment">
         <h4>Leave Comment</h4>
         <textarea class="comment-box"></textarea>
+        <button class="submit-button">Submit</button>
+    </div>
     </div>
 </div>
 
@@ -42,4 +45,20 @@
     <a href="#">Instagram</a>
     <a href="#">Twitter</a>
 </div>
+
+<script>
+    let images = ["SD:\School 2025\Code\Images\we.jpg"];
+    let currentIndex = 0;
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        document.getElementById("mainImage").src = images[currentIndex];
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById("mainImage").src = images[currentIndex];
+    }
+</script>
+
 </body>

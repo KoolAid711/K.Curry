@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+header {
+    background-color: #d3d3d3;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+nav a {
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #555;
+}
+.content {
+    max-width: 1200px;
+    margin: 10px auto;
+    background: white;
+    padding: 20px;
+}
+.latest-episode {
+    background-color: #d3d3d3;
+    padding: 50px;
+    margin: 20px auto;
+    width: 50%;
+}
+.latest-episode video {
+    width: 100%;
+    height: auto;
+}
+.post {
+    display: flex;
+    align-items: center; /* Ensures image and text align properly */
+    background-color: #d3d3d3;
+    margin: 20px;
+    padding: 20px;
+}
+
+.post img {
+    width: 300px; /* Consistent width */
+    height: 300px; /* Consistent height */
+    object-fit: cover; /* Ensures images don't stretch */
+    margin-right: 20px;
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column; /* Stacks h2 and p properly */
+    justify-content: center; /* Centers text in the div */
+    text-align: left; /* Aligns text properly */
+    flex: 1; /* Allows text to take the remaining space */
+}
+
+.post h2 {
+    font-size: 1.5em; 
+    margin-bottom: 10px; /* Adds space between title and paragraph */
+    line-height: 1.2;
+}
+
+.post p {
+    font-size: 1.1em; 
+    line-height: 1.5;
+    margin: 0; /* Removes extra spacing */
+}
+.social-media {
+    background-color: #000;
+    padding: 10px;
+    margin-top: 20px;
+}
+.social-media a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
