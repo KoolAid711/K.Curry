@@ -12,7 +12,7 @@
             <img src="Images/logo.png" alt="Real Gamers Speak Logo">
         </div>
         <div class="video-container" onclick="navigate()">
-            <video autoplay loop>
+            <video id="intro-video" autoplay loop>
                 <source src="Twitch Offline.mp4" type="video/mp4">
             </video>
             <div class="click-text">Click Video to Enter Site</div>
@@ -20,6 +20,13 @@
     </div>
     </div>
     <script>
+            window.addEventListener('load', function() {
+            let video = document.getElementById('intro-video');
+            video.muted = false; // Unmute
+            video.play().catch(error => {
+                console.log("Autoplay failed, requiring user interaction:", error);
+            });
+        });
         function navigate() {
             window.location.href = "Welcome_Page_html_Curry.html";
         }
