@@ -20,6 +20,10 @@
             cursor: pointer;
             border-radius: 5px;
             overflow: hidden;
+            position: relative; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .video-container video {
             width: 100%;
@@ -27,13 +31,13 @@
         }
         .click-text {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.6);
             color: red;
-            font-size: 24px;
-            padding: 12px 20px;
+            font-size: 26px;
+            padding: 12px 25px;
             font-weight: bold;
             border-radius: 5px;
             font-family: Bebas Neue, sans-serif;
