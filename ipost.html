@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Gamers Speak - Podcast and Blog</title>
+    <link rel="stylesheet" href="ipost.css">
+    </head>
+    <body>
+        <div class="header">Real Gamers Speak<br>Podcast and Blog</div>
+        <div class="nav">
+            <a href="#">Episodes</a>
+            <a href="#">Pictures</a>
+            <a href="#">Clips</a>
+            <a href="#">About the Host</a>
+            <a href="#">Poll</a>
+        </div>
+        <div class="content">
+            <div class="post">
+                <img src="Images/logo.png" alt="Real Gamers Speak Logo">
+                <div class="post-content">
+                    <h2>Start of RGS</h2>
+                    <small>Posted on 1/26/2025</small></p>
+                    <p>I wanted to create a safe haven for gamers to give unbiased and honest opinions about video games without the influence of publishers...</p>
+                </div>
+            </div>
+        </div>
+    <div class="comment-section">
+        <h3>Comment Section</h3>
+        <input class="comment-box" type="text" id="commentInput" placeholder="Enter your comment here">
+        <button onclick="addComment()">Post Comment</button>
+        <div class="comment-list" id="commentList">
+            <div class="comment">@iPLAYGAMES: I don’t know what is out there</div>
+            <div class="comment">@milikud: Hope you all make it big</div>
+            <div class="comment">@edwardpatrick: Laughter is the best medicine...</div>
+        </div>
+    </div>
+
+    <script>
+        function addComment() {
+            let input = document.getElementById("commentInput");
+            let commentText = input.value.trim();
+            
+            if (commentText !== "") {
+                let commentList = document.getElementById("commentList");
+                let newComment = document.createElement("div");
+                newComment.className = "comment";
+                newComment.textContent = "@guest: " + commentText;
+                
+                commentList.appendChild(newComment);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </div>
+</body>
+</html>
