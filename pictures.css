@@ -61,6 +61,7 @@ h1 {
 .comment-section {
     max-width: 1200px;
     margin: auto;
+    margin-top: 40px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
