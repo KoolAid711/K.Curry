@@ -28,7 +28,7 @@
 
 <div class="image-section">
     <img id="mainImage" src="Images/we.jpg" alt="Gaming Night">
-    <h1>Nacho and Gaming in the Man Cave</h1>
+    <h1 id="imageCaption">Nacho and Gaming in the Man Cave</h1>
 </div>
 
 <div class="comment-section">
@@ -54,7 +54,7 @@
 </div>
 
 <script>
-    let images = ["Images/we.jpg"];
+    let images = ["Images/we.jpg","Images/us.jpg", "Images/she.jpg", "Images/they.jpg", "Images/they2.jpg", "Images/she2.jpg","Images/they3.jpg"];
     let currentIndex = 0;
 
     function prevImage() {
@@ -80,6 +80,30 @@
                 input.value = "";
             }
         }
+        let captions = [
+    "Nacho and Gaming in the Man Cave",
+    "Gaming with our Kiddos",
+    "Daugther with her Gaming Setup",
+    "Cosplayers - Baulders' Gate 3",
+    "Cosplayers - Helldivers2",
+    "Daugther - Full Gaming Setup",
+    "Cosplayer - Bayonetta"
+];
+
+function updateImage() {
+    document.getElementById("mainImage").src = images[currentIndex];
+    document.querySelector(".image-section h1").textContent = captions[currentIndex];
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+}
 </script>
 
 </body>
