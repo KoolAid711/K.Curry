@@ -32,11 +32,15 @@
 </div>
 
 <div class="comment-section">
-    <div class="comment">
-        <h4>Leave Comment</h4>
-        <textarea class="comment-box"></textarea>
-        <button class="submit-button">Submit</button>
+    <h3>Comment Section</h3>
+    <div class="input-container">
+        <input class="comment-box" type="text" id="commentInput" placeholder="Enter your comment here">
+        <button onclick="addComment()">Post</button>
     </div>
+    <div class="comment-list" id="commentList">
+        <div class="comment">@iPLAYGAMES: I don’t know what is out there</div>
+        <div class="comment">@milikud: Hope you all make it big</div>
+        <div class="comment">@edwardpatrick: Laughter is the best medicine...</div>
     </div>
 </div>
 
@@ -62,6 +66,20 @@
         currentIndex = (currentIndex + 1) % images.length;
         document.getElementById("mainImage").src = images[currentIndex];
     }
+    function addComment() {
+            let input = document.getElementById("commentInput");
+            let commentText = input.value.trim();
+            
+            if (commentText !== "") {
+                let commentList = document.getElementById("commentList");
+                let newComment = document.createElement("div");
+                newComment.className = "comment";
+                newComment.textContent = "@guest: " + commentText;
+                
+                commentList.appendChild(newComment);
+                input.value = "";
+            }
+        }
 </script>
 
 </body>

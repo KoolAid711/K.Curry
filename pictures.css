@@ -59,18 +59,50 @@ h1 {
     width: 100%;
 }
 .comment-section {
-    background-color: #f1f1f1;
-    color: black;
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
-    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
 }
-.comment {
-    background-color: white;
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.comment-box {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 10px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.comment-list {
+    max-width: 800px;
+    margin-top: 20px;
+    background: #fff;
     padding: 15px;
     border-radius: 5px;
-    display: inline-block;
-    text-align: left;
-    width: 60%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.comment {
+    padding: 10px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.comment:last-child {
+    border-bottom: none;
 }
 .social-media {
     background-color: #000;
