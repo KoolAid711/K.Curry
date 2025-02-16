@@ -24,33 +24,35 @@
                     <p>I wanted to create a safe haven for gamers to give unbiased and honest opinions about video games without the influence of publishers. You get to hear video game news and gossip from the actual consumer instead of from the producers and advertisers. I also wanted to include my friend group of other gamers as well to show that we all have different preferences and personalities. We can agree that we enjoy playing video games and I wanted people to watch our shenanigans or eventually join us. Catch our podcast live on Twitch every Sunday at 8 p.m est. If you can’t make it to our live sessions watch our video repost the following Tuesday on YouTube and audio repost on Spotify.</p>
                 </div>
             </div>
-            <div class="comment-section">
-                <h3>Comment Section</h3>
-                <input class="comment-box" type="text" id="commentInput" placeholder="Enter your comment here">
-                <button onclick="addComment()">Post Comment</button>
-                <div class="comment-list" id="commentList">
-                    <div class="comment">@iPLAYGAMES: I don’t know what is out there</div>
-                    <div class="comment">@milikud: Hope you all make it big</div>
-                    <div class="comment">@edwardpatrick: Laughter is the best medicine...</div>
-                </div>
-            </div>
-        
-            <script>
-                function addComment() {
-                    let input = document.getElementById("commentInput");
-                    let commentText = input.value.trim();
-                    
-                    if (commentText !== "") {
-                        let commentList = document.getElementById("commentList");
-                        let newComment = document.createElement("div");
-                        newComment.className = "comment";
-                        newComment.textContent = "@guest: " + commentText;
-                        
-                        commentList.appendChild(newComment);
-                        input.value = "";
-                    }
-                }
-            </script>
+           <div class="comment-section">
+        <h3>Comment Section</h3>
+        <div class="input-container">
+            <input class="comment-box" type="text" id="commentInput" placeholder="Enter your comment here">
+            <button onclick="addComment()">Post</button>
+        </div>
+        <div class="comment-list" id="commentList">
+            <div class="comment">@iPLAYGAMES: I don’t know what is out there</div>
+            <div class="comment">@milikud: Hope you all make it big</div>
+            <div class="comment">@edwardpatrick: Laughter is the best medicine...</div>
+        </div>
+    </div>
+
+    <script>
+        function addComment() {
+            let input = document.getElementById("commentInput");
+            let commentText = input.value.trim();
+            
+            if (commentText !== "") {
+                let commentList = document.getElementById("commentList");
+                let newComment = document.createElement("div");
+                newComment.className = "comment";
+                newComment.textContent = "@guest: " + commentText;
+                
+                commentList.appendChild(newComment);
+                input.value = "";
+            }
+        }
+    </script>
         </div>
     
 </body>
