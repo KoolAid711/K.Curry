@@ -52,11 +52,58 @@ header {
     margin: auto;
 }
 #mainImage {
-    width: auto; /* Maintain original width */
-    height: 400px; /* Adjust this value based on your design */
-    max-height: 80vh; /* Ensures image fits within the viewport */
-    object-fit: contain; /* Ensures full image is visible */
-    border-radius: 10px; /* Optional: Rounds the corners for a polished look */
+    width: 100%; /* Scales the image to fit its container */
+    max-width: 600px; /* Prevents images from being too large */
+    height: auto; /* Adjusts height automatically */
+    max-height: 80vh; /* Ensures it doesn't exceed 80% of screen height */
+    object-fit: contain; /* Ensures the full image is displayed */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #mainImage {
+        max-width: 90vw; /* Makes the image fit smaller screens */
+        max-height: 60vh; /* Ensures better viewing on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    #mainImage {
+        max-width: 95vw; /* Adjust for very small screens */
+        max-height: 50vh;
+    }
+}
+/* Modal container (hidden by default) */
+.modal {
+    display: none; /* Hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Enlarged image inside modal */
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 10px;
+}
+
+/* Close button (X) */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }
 h1 {
     display: flex;

@@ -27,8 +27,13 @@
 </div>
 
 <div class="image-section">
-    <img id="mainImage" src="Images/we.jpg" alt="Gaming Night">
+    <img id="mainImage" src="Images/we.jpg" alt="Gaming Night" onclick="openModal()">
     <h1 id="imageCaption">Nacho and Gaming in the Man Cave</h1>
+</div>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
 </div>
 
 <div class="comment-section">
@@ -104,6 +109,20 @@ function nextImage() {
     currentIndex = (currentIndex + 1) % images.length;
     updateImage();
 }
+
+function openModal() {
+    let modal = document.getElementById("imageModal");
+    let modalImg = document.getElementById("modalImage");
+    let mainImg = document.getElementById("mainImage");
+
+    modal.style.display = "flex"; // Show modal
+    modalImg.src = mainImg.src; // Set modal image to the clicked image
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none"; // Hide modal
+}
+
 </script>
 
 </body>
