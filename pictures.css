@@ -52,13 +52,14 @@ header {
     margin: auto;
 }
 #mainImage {
-    width: 100%; /* Scales the image to fit its container */
-    max-width: 600px; /* Prevents images from being too large */
-    height: auto; /* Adjusts height automatically */
-    max-height: 80vh; /* Ensures it doesn't exceed 80% of screen height */
-    object-fit: contain; /* Ensures the full image is displayed */
+    width: auto;  /* Allow width to adjust naturally */
+    max-width: 90vw; /* Ensure it doesn't exceed screen width */
+    height: 600px; /* Default height */
+    max-height: 80vh; /* Prevents oversized images */
+    object-fit: contain; /* Ensures full image is displayed */
     border-radius: 10px; /* Optional rounded corners */
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
