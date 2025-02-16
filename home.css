@@ -81,8 +81,12 @@ nav a:hover {
     padding: 10px;
     margin-top: 20px;
     text-align: center;
+    display: flex; /* Aligns elements in a row */
+    justify-content: center; /* Centers them horizontally */
+    flex-wrap: wrap; /* Allows wrapping if needed */
 }
 .social-media a {
+    display: inline-block; /* Ensures links stay in line */
     color: white;
     margin: 0 15px;
     text-decoration: none;
