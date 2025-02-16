@@ -51,6 +51,13 @@ header {
     display: block;
     margin: auto;
 }
+#mainImage {
+    width: auto; /* Maintain original width */
+    height: 400px; /* Adjust this value based on your design */
+    max-height: 80vh; /* Ensures image fits within the viewport */
+    object-fit: contain; /* Ensures full image is visible */
+    border-radius: 10px; /* Optional: Rounds the corners for a polished look */
+}
 h1 {
     display: flex;
     justify-content: center;
