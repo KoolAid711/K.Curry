@@ -31,12 +31,11 @@
         }
         .click-text {
             position: absolute;
-            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.6);
             color: red;
-            font-size: 26px;
+            font-size: 32px;
             padding: 12px 25px;
             font-weight: bold;
             border-radius: 5px;
