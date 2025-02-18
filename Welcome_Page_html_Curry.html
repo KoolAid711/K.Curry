@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Gamers Speak - Podcast and Blog</title>
     <link rel="stylesheet" href="home.css">
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
     </head>
     <body>
         <div class="header">Real Gamers Speak<br>Podcast and Blog</div>
@@ -21,9 +22,7 @@
             <div class="post">
                 <div class="latest-episode">
                     <h1 style="text-align: Center;">Previously on RGS</h1>
-                    <video controls>
-                        <source src="Be Right Back 1.mp4" type="video/mp4">
-                    </video>
+                    <iframe src="https://www.twitch.tv/videos/2383292936&parent=127.0.0.1/8" height="720" width="100%"allowfullscreen></iframe>
                 </div>
             </div>
             </a>
@@ -78,4 +77,14 @@
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    new Twitch.Embed("twitch-embed", {
+        width: "100%",
+        height: "500px",
+        channel: "realgamersspeak",
+        parent: ["127.0.0.1/8"] // Replace with your actual domain
+    });
+
+
+</script>
 </html>
