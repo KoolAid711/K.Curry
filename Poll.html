@@ -4,85 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Gamers Speak - Polls</title>
-    <link rel="stylesheet" href="poll.css">
-</head>
-<body>
-    <div class="header">Real Gamers Speak<br>Podcast and Blog</div>
-    <div class="nav">
-        <a href="Episode_Page_Curry.html">Episodes</a>
-        <a href="Pictures_Curry.html">Pictures</a>
-        <a href="Post_Page_Curry.html">Clips</a>
-        <a href="Host_Page_Curry.html">About the Host</a>
-        <a href="Poll.html">Poll</a>
-    </div>
-    <div class="container">
-        <div class="box">
-            <h3>Poll for Previous Episode</h3>
-            <p>Would you agree that the nominees for the GOTY gaming awards are lackluster?</p>
-            <form>
-                <label><input type="radio" name="goty" value="Yes" onclick="vote(this)"> Yes <span class="vote-count" id="Yes-count">0</span></label><br>
-                <label><input type="radio" name="goty" value="No" onclick="vote(this)"> No <span class="vote-count" id="No-count">0</span></label><br>
-                <label><input type="radio" name="goty" value="Indifferent" onclick="vote(this)"> Indifferent <span class="vote-count" id="Indifferent-count">0</span></label><br>
-            </form>
-              <h4>Leave Comment</h4>
-            <textarea class="comment-box"></textarea>
-            <button class="submit-button">Submit</button>
-        </div>
-        <div class="box">
-            <h3>Poll for Next Episode</h3>
-            <p>What Games are you looking forward to this year?</p>
-            <form>
-                <label><input type="checkbox" name="games" value="Metal Gear Solid Delta" onclick="vote(this)"> Metal Gear Solid Delta <span class="vote-count" id="Metal Gear Solid Delta-count">0</span></label><br>
-                <label><input type="checkbox" name="games" value="Phantom Blade Zero" onclick="vote(this)"> Phantom Blade Zero <span class="vote-count" id="Phantom Blade Zero-count">0</span></label><br>
-                <label><input type="checkbox" name="games" value="Monster Hunter Wilds" onclick="vote(this)"> Monster Hunter Wilds <span class="vote-count" id="Monster Hunter Wilds-count">0</span></label><br>
-                <label><input type="checkbox" name="games" value="Assassin's Creed Shadows" onclick="vote(this)"> Assassin's Creed Shadows <span class="vote-count" id="Assassin's Creed Shadows-count">0</span></label><br>
-                <label><input type="checkbox" name="games" value="Metroid Prime 4" onclick="vote(this)"> Metroid Prime 4 <span class="vote-count" id="Metroid Prime 4-count">0</span></label><br>
-            </form>
-          <h4>Leave Comment</h4>
-            <textarea class="comment-box"></textarea>
-            <button class="submit-button">Submit</button>
-        </div>
-        <div class="box">
-            <h3>Suggestions for Future Episodes</h3>
-            <p>What type of games do you want us to focus on?</p>
-            <form>
-                <input type="checkbox" name="genres" value="RPGs"> RPGs<br>
-                <input type="checkbox" name="genres" value="FPS"> FPS<br>
-                <input type="checkbox" name="genres" value="Indie Games"> Indie Games<br>
-                <input type="checkbox" name="genres" value="Action/Adventure"> Action/Adventure<br>
-                <input type="checkbox" name="genres" value="Racing"> Racing<br>
-                <input type="checkbox" name="genres" value="Puzzles/Strategy"> Puzzles/Strategy<br>
-            </form>
-            <p>Industry Trends<br>Which of these gaming trends interest you most?</p>
-            <form>
-                <input type="checkbox" name="trends" value="Game soundtracks and design"> Game soundtracks and design<br>
-                <input type="checkbox" name="trends" value="Graphics and visual storytelling"> Graphics and visual storytelling<br>
-                <input type="checkbox" name="trends" value="AI and gaming innovations"> AI and gaming innovations<br>
-                <input type="checkbox" name="trends" value="Esports and competitive gaming"> Esports and competitive gaming<br>
-            </form>
-              <h4>Leave Comment</h4>
-            <textarea class="comment-box"></textarea>
-            <button class="submit-button">Submit</button>
-        </div>
-    </div>
-    <div class="social-media">
-        <a href="https://www.facebook.com/profile.php?id=61565919802390">Facebook</a>
-        <a href="https://www.instagram.com/realgamersspeak#">Instagram</a>
-        <a href="https://x.com/RealGamersSpeak">Twitter</a>
-        <a href="https://www.youtube.com/channel/UC4U4xfmSs8bKDFizK0B4BwA">YouTube</a>
-        <a href="https://www.twitch.tv/realgamersspeak">Twitch</a>
-        <a href="https://open.spotify.com/show/5YuRFoNdAfYbGDmbVIc2HM#">Spotify</a>
-    </div>
+    <link rel="stylesheet" href="poll2.css">
     <script>
-        let voteCounts = {};
-        function vote(element) {
-            let value = element.value;
-            if (!voteCounts[value]) {
-                voteCounts[value] = 0;
+         document.addEventListener("DOMContentLoaded", function () {
+            let votedForms = new Set();
+            let totalVotes = {};
+            
+            document.querySelectorAll(".submit-button").forEach(button => {
+                button.addEventListener("click", function () {
+                    let form = this.closest("form");
+                    let formId = form.getAttribute("data-form-id");
+                    
+                    if (votedForms.has(formId)) {
+                        alert("You have already voted on this poll.");
+                        return;
+                    }
+                    
+                    let selected = form.querySelectorAll("input:checked");
+                    if (selected.length === 0) {
+                        alert("Please select at least one option before submitting.");
+                        return;
+                    }
+                    
+                    if (!totalVotes[formId]) {
+                        totalVotes[formId] = {};
+                    }
+                    
+                    selected.forEach(option => {
+                        let value = option.value;
+                        if (!totalVotes[formId][value]) {
+                            totalVotes[formId][value] = 0;
+                        }
+                        totalVotes[formId][value]++;
+                    });
+                    
+                    votedForms.add(formId);
+                    form.style.display = "none"; // Hide the form after voting
+                    
+                    displayResults(formId);
+                });
+            });
+            
+            function displayResults(formId) {
+                let resultsContainer = document.createElement("div");
+                resultsContainer.classList.add("results-container");
+                
+                let totalVotesCount = Object.values(totalVotes[formId]).reduce((a, b) => a + b, 0);
+                
+                for (let option in totalVotes[formId]) {
+                    let percentage = ((totalVotes[formId][option] / totalVotesCount) * 100).toFixed(2);
+                    let resultEntry = document.createElement("p");
+                    resultEntry.innerText = `${option}: ${percentage}%`;
+                    resultsContainer.appendChild(resultEntry);
+                }
+                
+                document.querySelector(`[data-form-id='${formId}']`).parentNode.appendChild(resultsContainer);
             }
-            voteCounts[value]++;
-            document.getElementById(value + "-count").innerText = voteCounts[value];
-        }
+        });
         function addComment() {
             let input = document.getElementById("commentInput");
             let commentText = input.value.trim();
@@ -98,5 +76,77 @@
             }
         }
     </script>
+</head>
+<body>
+    <div class="header">Real Gamers Speak<br>Podcast and Blog</div>
+    <div class="nav">
+        <a href="Episode_Page_Curry.html">Episodes</a>
+        <a href="Pictures_Curry.html">Pictures</a>
+        <a href="Post_Page_Curry.html">Clips</a>
+        <a href="Host_Page_Curry.html">About the Host</a>
+        <a href="Poll.html">Poll</a>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h3>Poll for Previous Episode</h3>
+            <p>Would you agree that the nominees for the GOTY gaming awards are lackluster?</p>
+            <form data-form-id="poll1">
+                <label><input type="radio" name="goty" value="Yes"> Yes</label><br>
+                <label><input type="radio" name="goty" value="No"> No</label><br>
+                <label><input type="radio" name="goty" value="Indifferent"> Indifferent</label><br>
+                <button type="button" class="submit-button">Submit</button>
+            </form>
+        </div>
+
+        <div class="box">
+            <h3>Poll for Next Episode</h3>
+            <p>What Games are you looking forward to this year?</p>
+            <form data-form-id="poll2">
+                <label><input type="radio" name="games" value="Metal Gear Solid Delta"> Metal Gear Solid Delta</label><br>
+                <label><input type="radio" name="games" value="Phantom Blade Zero"> Phantom Blade Zero</label><br>
+                <label><input type="radio" name="games" value="Monster Hunter Wilds"> Monster Hunter Wilds</label><br>
+                <label><input type="radio" name="games" value="Assassin's Creed Shadows"> Assassin's Creed Shadows</label><br>
+                <label><input type="radio" name="games" value="Metroid Prime 4"> Metroid Prime 4</label><br>
+                <button type="button" class="submit-button">Submit</button>
+            </form>
+        </div>
+
+        <div class="box">
+            <h3>Suggestions for Future Episodes</h3>
+            <p>What type of games do you want us to focus on?</p>
+            <form data-form-id="poll3">
+                <label></label><input type="checkbox" name="genres" value="RPGs"> RPGs<br>
+                <label></label><input type="checkbox" name="genres" value="FPS"> FPS<br>
+                <label></label><input type="checkbox" name="genres" value="Indie Games"> Indie Games<br>
+                <label></label><input type="checkbox" name="genres" value="Action/Adventure"> Action/Adventure<br>
+                <label></label><input type="checkbox" name="genres" value="Racing"> Racing<br>
+                <label></label><input type="checkbox" name="genres" value="Puzzles/Strategy"> Puzzles/Strategy<br>
+                <button type="button" class="submit-button">Submit</button>
+            </form>
+        </div>
+
+        <div class="comment-section">
+            <h1 style="color:red; text-align:center;">Comment Section</h1>
+            <div class="input-container">
+                <input class="comment-box" type="text" id="commentInput" placeholder="Enter your comment here">
+                <button onclick="addComment()">Post</button>
+            </div>
+            <div class="comment-list" id="commentList">
+                <div class="comment">@iPLAYGAMES: I don’t know what is out there</div>
+                <div class="comment">@milikud: Hope you all make it big</div>
+                <div class="comment">@edwardpatrick: Laughter is the best medicine...</div>
+            </div>
+
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?id=61565919802390">Facebook</a>
+            <a href="https://www.instagram.com/realgamersspeak#">Instagram</a>
+            <a href="https://x.com/RealGamersSpeak">Twitter</a>
+            <a href="https://www.youtube.com/channel/UC4U4xfmSs8bKDFizK0B4BwA">YouTube</a>
+            <a href="https://www.twitch.tv/realgamersspeak">Twitch</a>
+            <a href="https://open.spotify.com/show/5YuRFoNdAfYbGDmbVIc2HM#">Spotify</a>
+        </div>
+    </div>
 </body>
 </html>
+

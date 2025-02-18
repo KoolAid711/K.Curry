@@ -1,8 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
     background-color: #070707;
+    font-family: Arial, sans-serif;
 }
 .header {
     background-color: #d3d3d3;
@@ -25,6 +27,7 @@ body {
     background-color: #555;
 }
 .container {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -40,7 +43,6 @@ body {
 .social-media {
     background-color: #000;
     padding: 10px;
-    margin-top: 20px;
     text-align: center;
 }
 .social-media a {
@@ -49,25 +51,25 @@ body {
     text-decoration: none;
 }
 .comment-section {
-    max-width: 800px;
-    margin: auto;
+    width: 100%;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-top: 2px solid #ccc;
     background: #f9f9f9;
+    text-align: left;
 }
 .input-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 .comment-box {
-    width: 50%;
+    width: 60%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
 button {
     padding: 10px;
@@ -78,8 +80,8 @@ button {
     cursor: pointer;
 }
 .comment-list {
-    max-width: 800px;
-    margin-top: 20px;
+    width: 60%;
+    margin: auto;
     background: #fff;
     padding: 15px;
     border-radius: 5px;

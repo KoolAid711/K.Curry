@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Gamers Speak - Polls</title>
+    <link rel="stylesheet" href="poll.css">
+</head>
+<body>
+    <div class="header">Real Gamers Speak<br>Podcast and Blog</div>
+    <div class="nav">
+        <a href="Episode_Page_Curry.html">Episodes</a>
+        <a href="Pictures_Curry.html">Pictures</a>
+        <a href="Post_Page_Curry.html">Clips</a>
+        <a href="Host_Page_Curry.html">About the Host</a>
+        <a href="Poll.html">Poll</a>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h3>Poll for Previous Episode</h3>
+            <p>Would you agree that the nominees for the GOTY gaming awards are lackluster?</p>
+            <form>
+                <label><input type="radio" name="goty" value="Yes" onclick="vote(this)"> Yes <span class="vote-count" id="Yes-count">0</span></label><br>
+                <label><input type="radio" name="goty" value="No" onclick="vote(this)"> No <span class="vote-count" id="No-count">0</span></label><br>
+                <label><input type="radio" name="goty" value="Indifferent" onclick="vote(this)"> Indifferent <span class="vote-count" id="Indifferent-count">0</span></label><br>
+            </form>
+              <h4>Leave Comment</h4>
+            <textarea class="comment-box"></textarea>
+            <button class="submit-button">Submit</button>
+        </div>
+        <div class="box">
+            <h3>Poll for Next Episode</h3>
+            <p>What Games are you looking forward to this year?</p>
+            <form>
+                <label><input type="checkbox" name="games" value="Metal Gear Solid Delta" onclick="vote(this)"> Metal Gear Solid Delta <span class="vote-count" id="Metal Gear Solid Delta-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Phantom Blade Zero" onclick="vote(this)"> Phantom Blade Zero <span class="vote-count" id="Phantom Blade Zero-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Monster Hunter Wilds" onclick="vote(this)"> Monster Hunter Wilds <span class="vote-count" id="Monster Hunter Wilds-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Assassin's Creed Shadows" onclick="vote(this)"> Assassin's Creed Shadows <span class="vote-count" id="Assassin's Creed Shadows-count">0</span></label><br>
+                <label><input type="checkbox" name="games" value="Metroid Prime 4" onclick="vote(this)"> Metroid Prime 4 <span class="vote-count" id="Metroid Prime 4-count">0</span></label><br>
+            </form>
+          <h4>Leave Comment</h4>
+            <textarea class="comment-box"></textarea>
+            <button class="submit-button">Submit</button>
+        </div>
+        <div class="box">
+            <h3>Suggestions for Future Episodes</h3>
+            <p>What type of games do you want us to focus on?</p>
+            <form>
+                <input type="checkbox" name="genres" value="RPGs"> RPGs<br>
+                <input type="checkbox" name="genres" value="FPS"> FPS<br>
+                <input type="checkbox" name="genres" value="Indie Games"> Indie Games<br>
+                <input type="checkbox" name="genres" value="Action/Adventure"> Action/Adventure<br>
+                <input type="checkbox" name="genres" value="Racing"> Racing<br>
+                <input type="checkbox" name="genres" value="Puzzles/Strategy"> Puzzles/Strategy<br>
+            </form>
+            <p>Industry Trends<br>Which of these gaming trends interest you most?</p>
+            <form>
+                <input type="checkbox" name="trends" value="Game soundtracks and design"> Game soundtracks and design<br>
+                <input type="checkbox" name="trends" value="Graphics and visual storytelling"> Graphics and visual storytelling<br>
+                <input type="checkbox" name="trends" value="AI and gaming innovations"> AI and gaming innovations<br>
+                <input type="checkbox" name="trends" value="Esports and competitive gaming"> Esports and competitive gaming<br>
+            </form>
+              <h4>Leave Comment</h4>
+            <textarea class="comment-box"></textarea>
+            <button class="submit-button">Submit</button>
+        </div>
+    </div>
+    <div class="social-media">
+        <a href="https://www.facebook.com/profile.php?id=61565919802390">Facebook</a>
+        <a href="https://www.instagram.com/realgamersspeak#">Instagram</a>
+        <a href="https://x.com/RealGamersSpeak">Twitter</a>
+        <a href="https://www.youtube.com/channel/UC4U4xfmSs8bKDFizK0B4BwA">YouTube</a>
+        <a href="https://www.twitch.tv/realgamersspeak">Twitch</a>
+        <a href="https://open.spotify.com/show/5YuRFoNdAfYbGDmbVIc2HM#">Spotify</a>
+    </div>
+    <script>
+        let voteCounts = {};
+        function vote(element) {
+            let value = element.value;
+            if (!voteCounts[value]) {
+                voteCounts[value] = 0;
+            }
+            voteCounts[value]++;
+            document.getElementById(value + "-count").innerText = voteCounts[value];
+        }
+        function addComment() {
+            let input = document.getElementById("commentInput");
+            let commentText = input.value.trim();
+            
+            if (commentText !== "") {
+                let commentList = document.getElementById("commentList");
+                let newComment = document.createElement("div");
+                newComment.className = "comment";
+                newComment.textContent = "@guest: " + commentText;
+                
+                commentList.appendChild(newComment);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
