@@ -4,12 +4,31 @@ body {
     padding: 0;
     background-color: #000000;
 }
-header {
+.header {
     background-color: #d3d3d3;
     text-align: center;
     padding: 20px 0;
     font-size: 2em;
     font-weight: bold;
+    position: relative;
+}
+
+.header .logo {
+    display: none;
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+}
+
+.header .logo-link {
+    display: inline-block;
+}
+
+.header:hover .header-text {
+    display: none;
+}
+
+.header:hover .logo {
+    display: inline-block;
 }
 nav {
     display: flex;
