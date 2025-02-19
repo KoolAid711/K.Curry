@@ -116,10 +116,10 @@ a {
 
 .latest-episode {
     background-color: #0f3460; /* Dark blue */
-    padding: 10px;
+    padding: 5px;
     margin: 5px auto;
     width: 80%;
-    color: #ffffff;
+    color: #ff8c00;
 }
 
 .latest-episode video {
