@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="home.css">
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     </head>
+    
     <body>
         <div class="header">Real Gamers Speak<br>Podcast and Blog</div>
         <div class="nav">
@@ -22,7 +23,7 @@
             <div class="post">
                 <div class="latest-episode">
                     <h1 style="text-align: Center;">Previously on RGS</h1>
-                    <iframe src="https://www.twitch.tv/videos/2383292936&https://koolaid711.github.io/K.Curry" height="500" width="100%"allowfullscreen></iframe>
+                    <div id="twitch-embed"></div>
                 </div>
             </div>
             </a>
@@ -82,7 +83,7 @@
         width: "100%",
         height: "500px",
         channel: "realgamersspeak",
-        parent: ["127.0.0.1/8"] // Replace with your actual domain
+        parent: ["koolaid711.github.io"] // Replace with your actual domain
     });
 
 
