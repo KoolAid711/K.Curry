@@ -2,23 +2,23 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a2e; /* Deep purple background */
-    color: #ffffff; /* White text for contrast */
+    background-color: #1a1a2e;
+    color: #ffffff;
 }
 
 .header {
-    background-color: #0f3460; /* Dark blue */
+    background-color: #0f3460;
     text-align: center;
     padding: 20px 0;
     font-size: 2em;
     font-weight: bold;
     position: relative;
-    color: #ff8c00; /* Bright orange accent */
+    color: #ff8c00;
 }
 
 .header .logo {
     display: none;
-    width: 200px; /* Adjust size as needed */
+    width: 200px;
     height: auto;
 }
 
@@ -37,7 +37,8 @@ body {
 .nav {
     display: flex;
     justify-content: center;
-    background-color: #0f3460; /* Dark blue */
+    background-color: #0f3460;
+    flex-wrap: wrap;
 }
 
 .nav a {
@@ -49,14 +50,14 @@ body {
 }
 
 .nav a:hover {
-    background-color: #ff00ff; /* Magenta */
-    color: #ffd700; /* Bright yellow */
+    background-color: #ff00ff;
+    color: #ffd700;
 }
 
 .content {
     max-width: 1200px;
     margin: 20px auto;
-    background: #0f3460; /* Dark blue */
+    background: #0f3460;
     padding: 20px;
     color: #ffffff;
     border-radius: 10px;
@@ -66,7 +67,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #ff8c00; /* Bright orange */
+    background-color: #ff8c00;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -83,18 +84,13 @@ body {
 }
 
 .post-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
     text-align: left;
 }
 
 .post h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    line-height: 1.2;
-    color: #0f3460; /* Dark blue */
+    color: #0f3460;
 }
 
 .post p {
@@ -104,18 +100,18 @@ body {
 }
 
 .post:hover {
-    background-color: #ff00ff; /* Magenta */
-    color: #ffd700; /* Bright yellow */
+    background-color: #ff00ff;
+    color: #ffd700;
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    display: block; /* Makes the whole block clickable */
+    display: block;
 }
 
 .latest-episode {
-    background-color: #0f3460; /* Dark blue */
+    background-color: #0f3460;
     padding: 5px;
     margin: 5px auto;
     width: 80%;
@@ -139,7 +135,7 @@ a {
 
 .social-media a {
     display: inline-block;
-    color: #ff00ff; /* Magenta */
+    color: #ff00ff;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
@@ -147,5 +143,50 @@ a {
 }
 
 .social-media a:hover {
-    color: #ffd700; /* Bright yellow */
+    color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.5em;
+        padding: 15px 0;
+    }
+
+    .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav a {
+        padding: 10px;
+    }
+
+    .post {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .post img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.2em;
+    }
+
+    .nav a {
+        font-size: 0.9em;
+    }
+
+    .post {
+        flex-direction: column;
+    }
+
+    .post h2 {
+        font-size: 1.2em;
+    }
 }
