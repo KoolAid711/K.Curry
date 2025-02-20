@@ -2,23 +2,26 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a2e;
-    color: #ffffff;
+    background-color: #222;
+    color: black;
+    /*background-color: #1a1a2e; /* Deep purple background */
+    /*color: #ffffff; /* White text for contrast */
 }
 
 .header {
-    background-color: #0f3460;
+    /*background-color: #0f3460; /* Dark blue */
+    background-color: #d3d3d3;
     text-align: center;
     padding: 20px 0;
     font-size: 2em;
     font-weight: bold;
     position: relative;
-    color: #ff8c00;
+    /*color: #ff8c00; /* Bright orange accent */
 }
 
 .header .logo {
     display: none;
-    width: 200px;
+    width: 200px; /* Adjust size as needed */
     height: auto;
 }
 
@@ -37,8 +40,8 @@ body {
 .nav {
     display: flex;
     justify-content: center;
-    background-color: #0f3460;
-    flex-wrap: wrap;
+    background-color: #333;
+    /*background-color: #0f3460; /* Dark blue */
 }
 
 .nav a {
@@ -50,16 +53,18 @@ body {
 }
 
 .nav a:hover {
-    background-color: #ff00ff;
-    color: #ffd700;
+    /*background-color: #ff00ff; /* Magenta */
+    background-color: #555;
+    color: #ffd700; /* Bright yellow */
 }
 
 .content {
     max-width: 1200px;
     margin: 20px auto;
-    background: #0f3460;
+    background: white;
+    /*background: #0f3460; /* Dark blue */
     padding: 20px;
-    color: #ffffff;
+    /*color: #ffffff;*/
     border-radius: 10px;
 }
 
@@ -67,13 +72,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #ff8c00;
+    background-color: #d3d3d3;
+    /*background-color: #ff8c00; /* Bright orange */
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     gap: 20px;
-    color: #1a1a2e;
+    /*color: #1a1a2e;*/
 }
 
 .post img {
@@ -84,13 +90,18 @@ body {
 }
 
 .post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
     text-align: left;
 }
 
 .post h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
-    color: #0f3460;
+    line-height: 1.2;
+    /*color: #0f3460; /* Dark blue */
 }
 
 .post p {
@@ -100,22 +111,24 @@ body {
 }
 
 .post:hover {
-    background-color: #ff00ff;
-    color: #ffd700;
+    background-color: #e1e1e1;
+    /*background-color: #ff00ff; /* Magenta */
+    /*color: #ffd700; /* Bright yellow */
 }
 
 a {
     text-decoration: none;
     color: inherit;
-    display: block;
+    display: block; /* Makes the whole block clickable */
 }
 
 .latest-episode {
-    background-color: #0f3460;
+    background-color: #d3d3d3;
+    /*background-color: #0f3460; /* Dark blue */
     padding: 5px;
     margin: 5px auto;
     width: 80%;
-    color: #ff8c00;
+    /*color: #ffffff;*/
 }
 
 .latest-episode video {
@@ -135,7 +148,8 @@ a {
 
 .social-media a {
     display: inline-block;
-    color: #ff00ff;
+    color: white;
+    /*color: #ff00ff; /* Magenta */
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
@@ -143,50 +157,5 @@ a {
 }
 
 .social-media a:hover {
-    color: #ffd700;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
-        font-size: 1.5em;
-        padding: 15px 0;
-    }
-
-    .nav {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav a {
-        padding: 10px;
-    }
-
-    .post {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .post img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        font-size: 1.2em;
-    }
-
-    .nav a {
-        font-size: 0.9em;
-    }
-
-    .post {
-        flex-direction: column;
-    }
-
-    .post h2 {
-        font-size: 1.2em;
-    }
+    color: #ffd700; /* Bright yellow */
 }
