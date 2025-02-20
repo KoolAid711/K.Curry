@@ -41,9 +41,12 @@ html, body {
     color: white;
     padding: 15px 30px;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 .nav a:hover {
     background-color: #555;
+    color: #ffd700; /* Bright yellow */
 }
 .container {
     flex: 1;
@@ -63,11 +66,16 @@ html, body {
     background-color: #000;
     padding: 10px;
     text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
 }
 .social-media a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+}
+.social-media a:hover {
+    color: #ffd700; /* Bright yellow */
 }
 .comment-section {
     width: 100%;

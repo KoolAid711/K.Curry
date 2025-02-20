@@ -39,9 +39,12 @@ body {
     color: white;
     padding: 15px 30px;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 .nav a:hover {
     background-color: #555;
+    color: #ffd700; /* Bright yellow */
 }
 .carousel {
     background-color: #ccc;
@@ -189,4 +192,9 @@ button {
     color: white;
     margin: 0 15px;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.social-media a:hover {
+    color: #ffd700; /* Bright yellow */
 }

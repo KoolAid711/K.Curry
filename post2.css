@@ -40,9 +40,12 @@ body {
     color: white;
     padding: 15px 30px;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 .nav a:hover {
     background-color: #555;
+    color: #ffd700; /* Bright yellow */
 }
 .content {
     max-width: 1200px;
@@ -100,10 +103,15 @@ a {
     display: flex; /* Aligns elements in a row */
     justify-content: center; /* Centers them horizontally */
     flex-wrap: wrap; /* Allows wrapping if needed */
+    font-weight: bold;
+    transition: 0.3s;
 }
 .social-media a {
     display: inline-block; /* Ensures links stay in line */
     color: white;
     margin: 0 15px;
     text-decoration: none;
+}
+.social-media a:hover {
+    color: #ffd700; /* Bright yellow */
 }
