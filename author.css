@@ -2,10 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #0f3460;
+    color: #fffed0;
 }
 .header {
-    background-color: #d3d3d3;
+    background-color: #0f3460;
     text-align: center;
     padding: 20px 0;
     font-size: 2em;
@@ -33,18 +34,142 @@ body {
 nav {
     display: flex;
     justify-content: center;
-    background-color: #333;
+    background-color: #17616E;
 }
 nav a {
-    color: white;
+    color: #fffed0;
     padding: 15px 30px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 nav a:hover {
-    background-color: #555;
-    color: #ffd700; /* Bright yellow */
+    background-color: hsl(189, 92%, 66%);
+    color: #FD8916; /* Bright yellow */
+}
+/*for episode icon*/
+.episode-link {
+    color: #fffed0; /* Default text color */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds spacing between the icon and text */
+}
+
+.episode-icon {
+    width: 25px;
+    height: auto;
+    transition: 0.3s ease-in-out;
+    vertical-align: middle; /* Ensures alignment with text */
+}
+
+.episode-link:hover {
+    color: #FD8916; /* Change text color on hover */
+}
+
+.episode-link:hover .episode-icon {
+    content: url("Images/tvorange.png"); /* Change image on hover */
+}
+
+/*for pic icon*/
+.pic-link {
+    color: #fffed0; /* Default text color */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds spacing between the icon and text */
+}
+
+.pic-icon {
+    width: 25px;
+    height: auto;
+    transition: 0.3s ease-in-out;
+    vertical-align: middle; /* Ensures alignment with text */
+}
+
+.pic-link:hover {
+    color: #FD8916; /* Change text color on hover */
+}
+
+.pic-link:hover .pic-icon {
+    content: url("Images/picorange.png"); /* Change image on hover */
+}
+
+/*for news icon*/
+.news-link {
+    color: #fffed0; /* Default text color */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds spacing between the icon and text */
+}
+
+.news-icon {
+    width: 25px;
+    height: auto;
+    transition: 0.3s ease-in-out;
+    vertical-align: middle; /* Ensures alignment with text */
+}
+
+.news-link:hover {
+    color: #FD8916; /* Change text color on hover */
+}
+
+.news-link:hover .news-icon {
+    content: url("Images/newsoragne.png"); /* Change image on hover */
+}
+
+/*for host icon*/
+.host-link {
+    color: #fffed0; /* Default text color */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds spacing between the icon and text */
+}
+
+.host-icon {
+    width: 25px;
+    height: auto;
+    transition: 0.3s ease-in-out;
+    vertical-align: middle; /* Ensures alignment with text */
+}
+
+.host-link:hover {
+    color: #FD8916; /* Change text color on hover */
+}
+
+.host-link:hover .host-icon {
+    content: url("Images/hostorange.png"); /* Change image on hover */
+}
+
+/*for poll icon*/
+.poll-link {
+    color: #fffed0; /* Default text color */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds spacing between the icon and text */
+}
+
+.poll-icon {
+    width: 25px;
+    height: auto;
+    transition: 0.3s ease-in-out;
+    vertical-align: middle; /* Ensures alignment with text */
+}
+
+.poll-link:hover {
+    color: #FD8916; /* Change text color on hover */
+}
+
+.poll-link:hover .poll-icon {
+    content: url("Images/pollorange.png"); /* Change image on hover */
 }
 .content {
     text-align: center;
@@ -57,7 +182,7 @@ nav a:hover {
     margin: 30px 0;
 }
 .host-card {
-    background-color: #e0e0e0;
+    background-color: #7697a0;
     width: 250px;
     margin: 15px;
     padding: 20px;
@@ -75,13 +200,25 @@ nav a:hover {
     margin-top: 20px;
     text-align: center;
 }
+.social-media {
+    background-color: #17616E;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .social-media a {
-    color: white;
+    display: inline-block;
+    color: #fffed0;
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
+
 .social-media a:hover {
-    color: #ffd700; /* Bright yellow */
+    color: #FD8916; /* Bright yellow */
 }
